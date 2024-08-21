@@ -50,7 +50,7 @@ const EditTask = () => {
   };
   return (
     <>
-      <Link to="/task"> <FaArrowLeft className="ml-20 mt-20" /></Link>
+      <Link to="/user/task"> <FaArrowLeft className="ml-20 mt-20" /></Link>
     
     <div className="min-h-screen flex flex-col items-center justify-center">
       <h1 className="text-3xl font-bold mb-6">Update Task</h1>
