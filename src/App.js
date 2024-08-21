@@ -1,24 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Register from "./component/Register";
+import ForgotPassword from "./component/ForgotPassword";
+import UpdatePassword from "./component/UpdatePassword";
+import Login from "./component/Login";
+import ResetPassword from "./component/ResetPassword";
+import Task from "./component/Task";
+import AddTask from "./component/AddTask";
+import PrivateRoutes from "./component/PrivateRoutes";
+import EditTask from "./component/EditTask";
+import AuthRoutes from "./component/AuthRoutes";
+import Logout from "./component/Logout";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/auth" element={<AuthRoutes />} >
+        <Route path="" element={<Login />} />
+        <Route path="sign-up" element={<Register />} />
+        <Route path="login" element={<Login />} />
+        <Route path="forgot/password" element={<ForgotPassword />} />
+        <Route path="reset-password/:resetToken" element={<ResetPassword />} />
+        </Route>
+
+        {/* Secure Routes */}
+        <Route path="/user" element={<PrivateRoutes />} >
+          <Route path="change/password" element={<UpdatePassword />} />
+          <Route path="task" element={<Task />} />
+          <Route path="task/create" element={<AddTask />} />
+          <Route path="task/edit/:id" element={<EditTask />} />
+          <Route path="logout" element={<Logout /> } /> 
+        </Route>
+          
+      </Routes>
+
+    </BrowserRouter>
+
+
   );
 }
 
