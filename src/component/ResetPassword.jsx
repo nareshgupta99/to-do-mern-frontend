@@ -6,7 +6,6 @@ import { useParams } from "react-router";
 const ResetPassword =()=>{
 
     const { resetToken } = useParams();
-    console.log(resetToken);
 
     const [formData, setFormData] = useState({
         password: "",
@@ -29,6 +28,7 @@ const ResetPassword =()=>{
         try{
             const res=await resetPassword(formData)
             const {message}=res.data;
+            console.log(message)
             swal(message, "success");
             setFormData({
               password: "",

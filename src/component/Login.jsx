@@ -74,7 +74,7 @@ const Login =()=>{
               >
               Login
             </button>
-          <Link to="/forgot/password">Forgot-password</Link>
+          <Link to="/auth/forgot/password">Forgot-password</Link>
           </div>
         </form>
       </div>

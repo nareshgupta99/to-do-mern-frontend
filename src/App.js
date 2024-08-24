@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route ,Navigate} from "react-router-dom";
 import Register from "./component/Register";
 import ForgotPassword from "./component/ForgotPassword";
 import UpdatePassword from "./component/UpdatePassword";
@@ -14,6 +14,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
+      
         <Route path="/auth" element={<AuthRoutes />} >
         <Route path="" element={<Login />} />
         <Route path="sign-up" element={<Register />} />
@@ -30,7 +31,9 @@ function App() {
           <Route path="task/edit/:id" element={<EditTask />} />
           <Route path="logout" element={<Logout /> } /> 
         </Route>
-          
+
+        <Route path="*" element={<Navigate to="/auth/login" replace />} />
+        
       </Routes>
 
     </BrowserRouter>
