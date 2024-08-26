@@ -16,13 +16,12 @@ const EditTask = () => {
       });
     
     useEffect(()=>{
-        console.log(id);
         const fetchData=async ()=>{
            const {data} =await getTaskById(id);
            setFormData(data);
         }
         fetchData();
-    },[])
+    },[id])
 
 
   const handleChange = (e) => {
