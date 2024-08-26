@@ -10,7 +10,10 @@ import PrivateRoutes from "./component/PrivateRoutes";
 import EditTask from "./component/EditTask";
 import AuthRoutes from "./component/AuthRoutes";
 import Logout from "./component/Logout";
+
+
 function App() {
+  console.log(process.env.REACT_APP_BASE_URL)
   return (
     <BrowserRouter>
       <Routes>
