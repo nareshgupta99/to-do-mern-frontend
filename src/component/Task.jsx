@@ -8,7 +8,6 @@ const Task = () => {
 
   const [tasks, setTasks] = useState([]);
 
-  const [completedTasks, setcompletedTasks] = useState([]);
 
   const navigate = useNavigate();
 
@@ -122,51 +121,6 @@ const Task = () => {
 
 
       ))}
-
-      {completedTasks.length > 0 ?
-        completedTasks.map((task, index) => (
-
-
-          <div key={index} className="border rounded card w-1/3 m-auto my-4 p-4 ">
-            <div className="task-name mb-4">
-              <h1 className="text-xl font-bold">{task.name}</h1>
-            </div>
-            <div className="task-description mb-4">
-              <p>{task.description}</p>
-            </div>
-            <div className="task-priority mb-4">
-              <p className="font-semibold">Priority: {task.priority}</p>
-            </div>
-            <div className="task-finished mb-4">
-              <label className="flex items-center">
-                <input
-                  type="checkbox"
-                  className="mr-2"
-                  checked={task.isFinished}
-                  onChange={() => handleTaskFinished(task.id)}
-                />
-                <span>Finished</span>
-              </label>
-            </div>
-            <div className="task-actions flex justify-between">
-              <button
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-              // onClick={() => handleUpdate(task.id)}
-              >
-                Edit
-              </button>
-              <button
-                className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
-                onClick={() => handleDelete(task.id)}
-              >
-                Delete
-              </button>
-            </div>
-          </div>
-
-        ))
-
-        : ""}
     </>
 
   )

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import swal from "sweetalert";
-import { createTask, getTaskById, UpdateTask } from "../service/TasksService";
+import {  getTaskById, UpdateTask } from "../service/TasksService";
 import { useParams } from "react-router";
 import { FaArrowLeft } from "react-icons/fa";
 import { Link } from "react-router-dom";

@@ -9,7 +9,7 @@ const ForgotPassword = () => {
     email: ""
   });
 
-  const [loading, setLoading] = useState(false);
+ 
 
   const handleChange = (e) => {
     setData({ [e.target.name]: e.target.value });
@@ -18,11 +18,10 @@ const ForgotPassword = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      setLoading(true);
+     
       const res = await getEmailForForgotPassword(data);
       const { message } = res.data;
       swal(message, "success");
-      setLoading(false);
     } catch (err) {
       console.log(err)
 

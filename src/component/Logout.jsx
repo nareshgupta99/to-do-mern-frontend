@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import { Navigate } from 'react-router';
 
 function Logout() {
   

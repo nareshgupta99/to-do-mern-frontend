@@ -1,5 +1,5 @@
 import React from 'react'
-import { Navigate, Outlet, useNavigate } from 'react-router'
+import { Navigate, Outlet } from 'react-router'
 
 function AuthRoutes() {
     const isAuthenticated = !!localStorage.getItem("token"); // Check if token exists

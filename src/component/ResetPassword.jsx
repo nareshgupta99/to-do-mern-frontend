@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { loginUser, resetPassword } from "../service/UserService";
+import {  resetPassword } from "../service/UserService";
 import swal from "sweetalert";
 import { useParams } from "react-router";
 
